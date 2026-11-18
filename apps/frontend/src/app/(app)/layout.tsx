@@ -1,6 +1,14 @@
 import { SentryComponent } from '@gitroom/frontend/components/layout/sentry.component';
 
 export const dynamic = 'force-dynamic';
+export const metadata = {
+  title: {
+    default: 'XTOP Social Studio',
+    template: '%s | XTOP Social Studio',
+  },
+  description:
+    'Create, plan, schedule and publish content across your social channels with XTOP Social Studio.',
+};
 import '../global.scss';
 import 'react-tooltip/dist/react-tooltip.css';
 import '@copilotkit/react-ui/styles.css';
@@ -27,17 +35,22 @@ import { ChangeDirClient } from '@gitroom/frontend/components/new-layout/change.
 export default async function AppLayout({ children }: { children: ReactNode }) {
   const cookieStore = await cookies();
   const language = cookieStore.get(cookieName)?.value || fallbackLng;
+  const analyticsDomain =
+    process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN || 'xtop-social.local';
   const Plausible = !!process.env.STRIPE_PUBLISHABLE_KEY
     ? PlausibleProvider
     : Fragment;
   return (
     <html>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/xtop-mark.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" sizes="any" />
         {!!process.env.DATAFAST_WEBSITE_ID && (
           <Script
             data-website-id={process.env.DATAFAST_WEBSITE_ID}
-            data-domain="postiz.com"
+            data-domain={
+              process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN || 'xtop-social.local'
+            }
             src="https://datafa.st/js/script.js"
             strategy="afterInteractive"
           />
@@ -100,9 +113,7 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
             <DubAnalytics />
             <FacebookComponent />
             <GoogleTagManagerComponent gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
-            <Plausible
-              domain={!!process.env.IS_GENERAL ? 'postiz.com' : 'gitroom.com'}
-            >
+            <Plausible domain={analyticsDomain}>
               <LayoutContext>
                 <UtmSaver />
                 {children}
