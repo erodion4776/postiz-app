@@ -22,7 +22,7 @@ export const useMenuItem = () => {
 
   const firstMenu = [
     {
-      name: isGeneral ? t('calendar', 'Calendar') : t('launches', 'Launches'),
+      name: isGeneral ? t('calendar', 'Calendar') : 'Publish',
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ export const useMenuItem = () => {
       path: '/launches',
     },
     {
-      name: 'Agent',
+      name: 'AI Assistant',
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ export const useMenuItem = () => {
       path: '/analytics',
     },
     {
-      name: t('media', 'Media'),
+      name: 'Media Library',
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
