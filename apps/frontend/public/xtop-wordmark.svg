@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 88" role="img" aria-labelledby="title">
+  <title id="title">XTOP Social Studio</title>
+  <defs><linearGradient id="xtop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8B5CF6"/><stop offset="1" stop-color="#2563EB"/></linearGradient></defs>
+  <rect x="4" y="4" width="80" height="80" rx="22" fill="#111827"/>
+  <path d="M23 21h13l29 46H52L23 21Z" fill="url(#xtop)"/>
+  <path d="M65 21H52L23 67h13l29-46Z" fill="#fff"/>
+  <circle cx="67" cy="21" r="5" fill="#A78BFA"/>
+  <text x="101" y="48" fill="#F9FAFB" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800" letter-spacing="-1.2">XTOP</text>
+  <text x="103" y="69" fill="#9CA3AF" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.4">SOCIAL STUDIO</text>
+</svg>
